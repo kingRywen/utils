@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+</head>
+<body>
+  <script src="scripts/require.js" data-main="scripts/main.js"></script>
+  <script>
+    require(['app/times'], function (times) {
+      console.log(times)
+      var action = times.throttle(function () {
+        console.log(1)
+      }, 500)
+      
+      window.onresize = action
+    })
+  </script>
+</body>
+</html>
